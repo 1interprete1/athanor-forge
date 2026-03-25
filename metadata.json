@@ -1,0 +1,5 @@
+{
+  "name": "Athanor Forge",
+  "description": "High-performance LPU inference studio for developers and AI analysts. Favorites Dock for quick model access and selection (AF-166).",
+  "requestFramePermissions": []
+}
