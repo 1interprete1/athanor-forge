@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-terminal-caret: terminal-caret 1s steps(2) infinite;
+  
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+  
+  @keyframes terminal-caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Scrollbars minimalistas */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 2px;
+}
+:hover::-webkit-scrollbar-thumb {
+  background: #3f3f46; /* Zinc-700 */
+}
+
+/* Transiciones suaves */
+* {
+  transition: opacity 200ms ease-in-out;
+}
+
+/* Industrial Fader Custom Styles */
+.industrial-fader {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+}
+
+.industrial-fader::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #000000;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8), inset 0 -1px 1px rgba(255,255,255,0.05);
+  border-radius: 0;
+  border: 1px solid #18181b;
+}
+
+.industrial-fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 8px;
+  background: #d4d4d8;
+  border-radius: 1px;
+  margin-top: -5px;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  background-image: linear-gradient(to bottom, transparent 45%, #f97316 45%, #f97316 55%, transparent 55%);
+  transition: box-shadow 0.2s;
+}
+
+.industrial-fader:active::-webkit-slider-thumb {
+  box-shadow: 0 0 8px #f97316, 0 0 2px rgba(0,0,0,0.5);
+}
+
+.industrial-fader::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #000000;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8), inset 0 -1px 1px rgba(255,255,255,0.05);
+  border-radius: 0;
+  border: 1px solid #18181b;
+}
+
+.industrial-fader::-moz-range-thumb {
+  height: 16px;
+  width: 8px;
+  background: #d4d4d8;
+  border-radius: 1px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  background-image: linear-gradient(to bottom, transparent 45%, #f97316 45%, #f97316 55%, transparent 55%);
+  transition: box-shadow 0.2s;
+}
+
+.industrial-fader:active::-moz-range-thumb {
+  box-shadow: 0 0 8px #f97316, 0 0 2px rgba(0,0,0,0.5);
+}
